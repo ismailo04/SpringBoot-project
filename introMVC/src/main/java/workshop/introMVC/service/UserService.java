@@ -38,7 +38,9 @@ public class UserService {
         if (user == null) {
             return null;
         } else {
-            userRepository.assignPortfolio(user, portfolio);
+            if (userRepository.assignPortfolio(user, portfolio) == null) {
+                return null;
+            };
             return user;
         }
     }

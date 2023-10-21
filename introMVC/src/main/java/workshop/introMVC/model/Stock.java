@@ -8,6 +8,14 @@ import lombok.Setter;
 @AllArgsConstructor     // Lombok annotation that will create a constructor with all fields in the class
 @NoArgsConstructor      // Lombok annotation that will create a constructor with no fields in the class (Necessary when declaring all args constructor)
 public class Stock {
+
+    @Getter
+    @Setter
+    private String ticker;      // No need for id in stock as ticker is unique
+
+    @Getter
+    @Setter
+    private String name;
     
     @Getter
     @Setter
@@ -19,17 +27,6 @@ public class Stock {
 
     @Getter
     @Setter
-    private double close;
-
-    @Getter
-    @Setter
     private long volume;
 
-    @Getter
-    @Setter
-    private String ticker;      // No need for id in stock as ticker is unique
-
-    @Getter
-    @Setter
-    private String name;
 }

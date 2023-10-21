@@ -30,8 +30,13 @@ public class UserRepository {
         user.setPassword(password);
     }
 
-    public void assignPortfolio(User user, Portfolio portfolio) {
-        user.setPortfolio(portfolio);
+    public User assignPortfolio(User user, Portfolio portfolio) { 
+        if (user.getPortfolio() == null) {
+            user.setPortfolio(portfolio);
+            return user;
+        } else {
+            return null;
+        }
     }
 
     public User addUser(User user) {
