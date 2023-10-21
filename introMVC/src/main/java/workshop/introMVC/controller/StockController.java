@@ -20,12 +20,12 @@ public class StockController {
     private StockService stockService;
 
     @GetMapping("/view")
-    public ResponseEntity<String> viewStock(@RequestParam String ticker) {
+    public ResponseEntity<Stock> viewStock(@RequestParam String ticker) {
         Stock stock = stockService.viewStock(ticker);
         if (stock == null) {
             throw new IncorrectDataException("Stock with ticker " + ticker + " does not exist", HttpStatus.NOT_FOUND);
         } else {
-            return new ResponseEntity<String>(stock.toString(), HttpStatus.OK);
+            return new ResponseEntity<Stock>(stock, HttpStatus.OK);
         }
     }
 }

@@ -10,15 +10,15 @@ public class User {
     @NonNull
     private String password;
 
-    private Portfolio portfolio;
+    private String portfolioId;
 
     public User() {
     }
 
-    public User(String email, String password, Portfolio portfolio) {
+    public User(String email, String password, String portfolioId) {
         this.email = email;
         this.password = password;
-        this.portfolio = portfolio;
+        this.portfolioId = portfolioId;
     }
 
     // Getter method used to retrieve email of User object (because email is private)
@@ -39,12 +39,12 @@ public class User {
         this.password = password;
     }
 
-    public Portfolio getPortfolio() {
-        return portfolio;
+    public String getPortfolioId() {
+        return portfolioId;
     }
 
-    public void setPortfolio(Portfolio portfolio) {
-        this.portfolio = portfolio;
+    public void setPortfolio(String portfolioId) {
+        this.portfolioId = portfolioId;
     }
 
     

@@ -7,7 +7,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
-@AllArgsConstructor
 public class Transaction {
 
     @Getter
@@ -24,17 +23,26 @@ public class Transaction {
 
     @Getter
     @Setter
-    private Stock stock;
+    private String stockTicker;
 
     @Getter
     @Setter
-    private Portfolio portfolio;
+    private String portfolioId;
 
     @Getter
     @Setter
     private String id;
 
     public Transaction() {
+        this.id = UUID.randomUUID().toString();
+    }
+
+    public Transaction(double purchasePrice, int numberOfShares, Date date, String stockTicker, String portfolioId) {
+        this.purchasePrice = purchasePrice;
+        this.numberOfShares = numberOfShares;
+        this.date = date;
+        this.stockTicker = stockTicker;
+        this.portfolioId = portfolioId;
         this.id = UUID.randomUUID().toString();
     }
 }

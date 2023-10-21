@@ -33,20 +33,29 @@ public class UserService {
         }
     }
 
-    public User assignPortfolio(String email, Portfolio portfolio) {
+    public boolean hasPortfolio(String email) {
+        User user = userRepository.getUser(email);
+        if (user == null) {
+            return false;
+        } else {
+            return userRepository.hasPortfolio(user);
+        }
+    }
+
+    public User assignPortfolio(String email, String portfolioId) {
         User user = userRepository.getUser(email);
         if (user == null) {
             return null;
         } else {
-            if (userRepository.assignPortfolio(user, portfolio) == null) {
+            if (userRepository.assignPortfolio(user, portfolioId) == null) {
                 return null;
             };
             return user;
         }
     }
 
-    public User addUser(String email, String password, Portfolio portfolio) {
-        User user = new User(email, password, portfolio);
+    public User addUser(String email, String password, String portfolioId) {
+        User user = new User(email, password, portfolioId);
         userRepository.addUser(user);
         return user;
     }

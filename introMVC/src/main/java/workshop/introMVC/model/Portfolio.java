@@ -3,11 +3,9 @@ package workshop.introMVC.model;
 import java.util.List;
 import java.util.UUID;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
-@AllArgsConstructor
 public class Portfolio {
 
     @Getter
@@ -23,6 +21,12 @@ public class Portfolio {
     private double balance;
 
     public Portfolio() {
+        this.id = UUID.randomUUID().toString();
+    }
+
+    public Portfolio(List<Stock> stocks, double balance) {
+        this.stocks = stocks;
+        this.balance = balance;
         this.id = UUID.randomUUID().toString();
     }
 }
