@@ -6,18 +6,14 @@ import java.util.UUID;
 import lombok.Getter;
 import lombok.Setter;
 
+@Getter
+@Setter
 public class Portfolio {
 
-    @Getter
-    @Setter
     private List<Stock> stocks;
 
-    @Getter
-    @Setter
     private String id;
 
-    @Getter
-    @Setter
     private double balance;
 
     public Portfolio() {

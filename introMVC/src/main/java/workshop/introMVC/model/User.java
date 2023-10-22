@@ -21,12 +21,10 @@ public class User {
         this.portfolioId = portfolioId;
     }
 
-    // Getter method used to retrieve email of User object (because email is private)
     public String getEmail() {
         return email;
     }
 
-    // Getter method used to change email of User object (because email is private)
     public void setEmail(String email) {
         this.email = email;
     }
@@ -46,8 +44,4 @@ public class User {
     public void setPortfolio(String portfolioId) {
         this.portfolioId = portfolioId;
     }
-
-    
-
-    
 }
